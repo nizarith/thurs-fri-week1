@@ -1,51 +1,61 @@
 class Goods
-  attr_accessor :imported; :exemptst; :cost;
+  attr_accessor :imported, :exemptst, :cost
 
   def sales_tax
-  	unless @exemptst
-  		return "#{cost}" * 0.10
+  	unless exemptst
+  		"#{cost}" * 0.10
   	else
-  		return "#{cost}"
+  		"#{cost}"
   	end
   end
 
   def import_tax
-  	unless @imported
-  		return "#{cost}" * 0.05
+  	unless imported
+  		"#{cost}" * 0.05
   	else
-  		return "#{cost}"
+  		"#{cost}"
   	end
   end
 
+end
 
+
+# books food and medical products are exempt 
 
 puts "Input 1\:"
 puts "1 book at 12.49"
 puts "1 music CD at 14.99"
 puts "1 chocolate bar at 0.85"
 
+puts "The output is..."
+
 book1 = Goods.new
-book1
- 
+book1.cost = 12.49
+book1.imported = false
+book1.exemptst = true
+
+cd1 = Goods.new
+cd1.cost = 14.99
+cd1.imported = false
+cd1.exemptst = false
+cd1st = cd1.sales_tax
+
+bar1 = Goods.new
+bar1.cost = 0.85
+bar1.imported = false
+bar1.exemptst = false
+bar1st = bar1.sales_tax
+
+puts "Output 1\:"
+puts "1 book : #{book1.cost}"
+puts "1 music CD: (#{cd1.cost} + #{cd1st})"
+puts "1 chocolate bar: (#{cost} + #{bar1st})"
+puts "Sales Taxes: #{}"
+puts "Total: 29.83"
 
 
 
 
 
 
-puts "Input 2\:"
-puts "1 imported box of chocolates at 10.00"
-puts "1 imported bottle of perfume at 47.50"
- 
 
-
-
-
-
-
-
-puts "Input 3\:"
-puts "1 imported bottle of perfume at 27.99"
-puts "1 bottle of perfume at 18.99"
-puts "1 packet of headache pills at 9.75"
-puts "1 box of imported chocolates at 11.25"
