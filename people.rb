@@ -4,7 +4,6 @@ class Person
   def greeting
     puts "Hello, my name is #{name}."
   end
-
 end
 
 class Student < Person
