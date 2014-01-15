@@ -1,16 +1,13 @@
 class Parent
-  attr_name :name
-  attr_greet :greeting
+  :name
 
   def greeting
-    "Hello, my name is #{name}."
+    puts "Hello, my name is #{name}."
   end
 
 end
 
-
 class Student < Parent
-
   def learn
     puts "I get it!"
   end
