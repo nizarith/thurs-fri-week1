@@ -2,7 +2,7 @@ class Goods
   attr_accessor :imported, :exemptst, :cost
 
   def sales_tax
-  	unless exemptst
+  	if not exemptst
   		"#{cost}" * 0.10
   	else
   		"#{cost}"
@@ -10,15 +10,14 @@ class Goods
   end
 
   def import_tax
-  	unless imported
+  	if not imported
   		"#{cost}" * 0.05
   	else
-  		"#{cost}"
+  		andreas"#{cost}"
   	end
   end
 
 end
-
 
 # books food and medical products are exempt 
 
@@ -46,15 +45,20 @@ bar1.imported = false
 bar1.exemptst = false
 bar1st = bar1.sales_tax
 
+cd1total = cd1.cost + cd1st
+bar1total = bar1.cost + bar1st
+taxtotal1 = cd1st + bar1st
+bttotal1 = book1.cost + cd1.cost + bar1.cost
+actualtotal1 = taxtotal1 + bttotal1
+
+
+
 puts "Output 1\:"
 puts "1 book : #{book1.cost}"
-puts "1 music CD: (#{cd1.cost} + #{cd1st})"
-puts "1 chocolate bar: (#{cost} + #{bar1st})"
-puts "Sales Taxes: #{}"
-puts "Total: 29.83"
-
-
-
+puts "1 music CD: #{cd1total}"
+puts "1 chocolate bar: (#{bar1total})"
+puts "Sales Taxes: (#{taxtotal})"
+puts "Total: #{actualtotal1}"
 
 
 
