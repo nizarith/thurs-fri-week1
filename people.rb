@@ -1,5 +1,4 @@
-class Parent
-  :name
+class Person
 
   def greeting
     puts "Hello, my name is #{name}."
@@ -7,7 +6,8 @@ class Parent
 
 end
 
-class Student < Parent
+class Student < Person
+  attr_accessor :name
   def learn
     puts "I get it!"
   end
@@ -18,7 +18,8 @@ student.name = "Christina"
 puts student.greeting
 
 
-class Instructor < Parent
+class Instructor < Person
+  attr_accessor :name
   def teach
     puts "Everything in Ruby is an Object"
   end
