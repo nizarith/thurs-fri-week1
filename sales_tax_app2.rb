@@ -1,9 +1,8 @@
-class Goods
-  sales_tax_rate = 0.10
-  import_tax_rate = 0.05
+class SalesTax
 
   def initialize
   	@tax_rate = 0.10
+  	@import_tax_rate = 0.05
   end
 
   def calc_salestax(price)
@@ -13,20 +12,19 @@ class Goods
   def calc_total(price)
   	price * calc_sales_rate
   end
-
-  def 
 end
 
 
-class Item
+class Item < SalesTax
   def initialize(price)
   @price = price
+  end
 end
 
 
 class FoodTax < Item
   def initialize
-		@sales_tax_rate = 0
+		@tax_rate = 0
   end
 end
 
