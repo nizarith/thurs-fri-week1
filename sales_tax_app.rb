@@ -1,13 +1,9 @@
 class Goods
   attr_accessor :imported, :exempt, :cost
 
-  def initiate
-  puts "Would you like to calculate another item ('y' or 'n')"
-
-
   def sales_tax
-  	if not exempt
-  		cost * 0.10
+  	if !exempt
+  		(cost * 0.10)
   	else
   		cost
   	end
@@ -15,7 +11,7 @@ class Goods
 
   def import_tax
   	if imported
-  		cost * 0.05
+  		(cost * 0.05)
   	else
   		cost
   	end
@@ -23,20 +19,10 @@ class Goods
 
 end
 
-class Receipt < Goods
-  attr_accessor :name, :price, :totalcost
 
-  def print_receipt(name, price, imported, exempt)
-
-
-
-  def good_name ()
-
-
-# books food and medical products are exempt 
+# books food and medical products are exempt
 
 # basket 1...
-
 book1 = Goods.new
 book1.cost = 12.49
 book1.imported = false
@@ -114,4 +100,3 @@ puts "1 packet of headache pills: #{head1.cost}"
 puts "1 imported box of chocolates: #{choco2.cost + choco2it}"
 puts "Sales Taxes: #{perf2st + perf3st}"
 puts "Total: #{perf2.cost + perf2it + perf2st + perf3.cost + perf3st + head1.cost + choco2.cost + choco2it}"
-
